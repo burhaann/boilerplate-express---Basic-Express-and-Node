@@ -10,7 +10,7 @@ app.get("/string", function (req, res) {
 absolutePath = __dirname + "/views/index.html";
 
 app.get("/", function (req, res) {
-  res.send(absolutePath);
+  res.sendFile(absolutePath);
 });
 
 module.exports = app;
