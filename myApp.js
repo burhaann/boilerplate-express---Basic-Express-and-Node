@@ -21,13 +21,11 @@ app.get("/", function (req, res) {
 app.use("/public", express.static(__dirname + "/public"));
 
 //JSON format
-json_object = { message: "Hello json" };
+let json_object = { message: "Hello json" };
 app.get("/json", function (req, res) {
   //Using .ENV
   if (process.env.MESSAGE_STYLE === "uppercase") {
-    json_object.message.toUpperCase();
-  } else {
-    json_object.message.toLowerCase();
+    json_object.message = json_object.message.toUpperCase();
   }
   res.json(json_object);
 });
