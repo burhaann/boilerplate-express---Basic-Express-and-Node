@@ -49,4 +49,9 @@ app.get(
   }
 );
 
+//Get Route Parameter Input from the Client
+app.get("/:word", function (req, res) {
+  res.send({ echo: req.params.word });
+});
+
 module.exports = app;
