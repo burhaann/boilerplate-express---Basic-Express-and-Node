@@ -50,7 +50,7 @@ app.get(
 );
 
 //Get Route Parameter Input from the Client
-app.get("/:word", function (req, res) {
+app.get("/:word/echo", function (req, res) {
   res.send({ echo: req.params.word });
 });
 
