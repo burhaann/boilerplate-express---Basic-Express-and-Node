@@ -54,4 +54,12 @@ app.get("/:word/echo", function (req, res) {
   res.send({ echo: req.params.word });
 });
 
+//Get Query Parameter Input from the Client
+app
+  .route("/name")
+  .get(function (req, res) {
+    req.send({ name: req.query.first + " " + req.query.last });
+  })
+  .post(function (req, res) {});
+
 module.exports = app;
