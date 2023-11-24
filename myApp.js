@@ -18,7 +18,7 @@ app.get("/", function (req, res) {
 
 //static Public Assets
 // app.use(express.static(__dirname + "/public"));
-// app.use("/public", express.static(__dirname + "/public"));
+app.use("/public", express.static(__dirname + "/public"));
 
 //JSON format
 app.get("/json", function (req, res) {
@@ -31,7 +31,7 @@ app.get("/json", function (req, res) {
 });
 
 //Root-Level Request Logger Middleware
-app.use("/json", function (req, res, next) {
+app.use(function (req, res, next) {
   console.log(`${req.method} ${req.path} - ${req.ip}`);
   next();
 });
