@@ -64,6 +64,8 @@ app
   .get(function (req, res) {
     res.send({ name: req.query.first + " " + req.query.last });
   })
-  .post(function (req, res) {});
+  .post(function (req, res) {
+    res.send({ name: req.body.first + " " + req.body.last });
+  });
 
 module.exports = app;
