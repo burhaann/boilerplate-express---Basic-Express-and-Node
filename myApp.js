@@ -22,12 +22,12 @@ app.use("/public", express.static(__dirname + "/public"));
 
 //JSON format
 app.get("/json", function (req, res) {
-  let json_object = { message: "Hello json" };
+  let perfection = { message: "Hello json" };
   //Using .ENV
   if (process.env.MESSAGE_STYLE === "uppercase") {
-    json_object.message = json_object.message.toUpperCase();
+    perfection.message = perfection.message.toUpperCase();
   }
-  res.json(json_object);
+  res.json(perfection);
 });
 
 module.exports = app;
