@@ -25,10 +25,11 @@ json_object = { message: "Hello json" };
 app.get("/json", function (req, res) {
   //Using .ENV
   if (process.env.MESSAGE_STYLE === "uppercase") {
-    res.json(json_object.message.toUpperCase());
+    json_object.message.toUpperCase();
   } else {
-    res.json(json_object);
+    json_object.message.toLowerCase();
   }
+  res.json(json_object);
 });
 
 module.exports = app;
