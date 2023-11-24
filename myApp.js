@@ -30,4 +30,10 @@ app.get("/json", function (req, res) {
   res.json(data);
 });
 
+//Root-Level Request Logger Middleware
+app.use("/json", function (req, res, next) {
+  console.log(`${req.method} ${req.path} - ${req.ip}`);
+  next();
+});
+
 module.exports = app;
